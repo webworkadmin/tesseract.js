@@ -4,6 +4,7 @@
   "description": "A library to quickly generate a JSON hypercube definition",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "cross-env NODE_ENV=test aw-test-runner ./test/unit/**/*.ts"
   },
   "author": "rjriel",
@@ -15,6 +16,7 @@
     "cross-env": "^5.1.0",
     "eslint": "^4.9.0",
     "ts-node": "^3.3.0",
+    "tsc": "^1.20150623.0",
     "typescript": "^2.5.3"
   }
 }
