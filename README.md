@@ -1,5 +1,4 @@
 [![Coverage Status](https://coveralls.io/repos/github/Qlik-Branch/tesseract.js/badge.svg?branch=master)](https://coveralls.io/github/Qlik-Branch/tesseract.js?branch=master)
-
 [![CircleCI](https://circleci.com/gh/Qlik-Branch/tesseract.js.svg?style=svg)](https://circleci.com/gh/Qlik-Branch/tesseract.js)
 
 # Qlik Hypercube Definition Generator
