@@ -1,4 +1,4 @@
-import { SortCriteria, ValueExpression } from '../../lib'
+import { SortCriteria, ValueExpression } from '../../src/lib'
 import 'mocha'
 import { expect } from 'chai'
 

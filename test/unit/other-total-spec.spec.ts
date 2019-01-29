@@ -5,7 +5,7 @@ import {
   OtherSortModeEnum,
   OtherTotalModeEnum,
   OtherTotalSpec
-} from '../../lib'
+} from '../../src/lib'
 import 'mocha'
 import { expect } from 'chai'
 

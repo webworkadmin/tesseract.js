@@ -1,4 +1,4 @@
-import { FieldDefinition } from '../../lib'
+import { FieldDefinition } from '../../src/lib'
 import 'mocha'
 import { expect } from 'chai'
 

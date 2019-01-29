@@ -1,4 +1,4 @@
-import { FieldTypeEnum, FieldAttributes } from '../../lib'
+import { FieldTypeEnum, FieldAttributes } from '../../src/lib'
 import 'mocha'
 import { expect } from 'chai'
 

@@ -1,4 +1,4 @@
-import { ValueExpression } from '../../lib'
+import { ValueExpression } from '../../src/lib'
 import 'mocha'
 import { expect } from 'chai'
 

@@ -1,4 +1,4 @@
-import { Page } from '../../lib'
+import { Page } from '../../src/lib'
 import 'mocha'
 import { expect } from 'chai'
 
