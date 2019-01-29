@@ -17,7 +17,7 @@ describe('AttributeExpression', () => {
 
   it('should generate qLibraryId', () => {
     let attributeExpression = new AttributeExpression()
-    attributeExpression.LibraryId = 'TestLibraryId'
+    attributeExpression.libraryId = 'TestLibraryId'
     let json = JSON.stringify({ qLibraryId: 'TestLibraryId' })
     let result = JSON.stringify(attributeExpression.generate())
     expect(result).to.equal(json)
@@ -25,7 +25,7 @@ describe('AttributeExpression', () => {
 
   it('should generate qExpression', () => {
     let attributeExpression = new AttributeExpression()
-    attributeExpression.Expression = 'TestExpression'
+    attributeExpression.expression = 'TestExpression'
     let json = JSON.stringify({ qExpression: 'TestExpression' })
     let result = JSON.stringify(attributeExpression.generate())
     expect(result).to.equal(json)

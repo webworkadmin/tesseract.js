@@ -31,7 +31,7 @@ describe('Dimension', () => {
 
   it('should generate qLibraryId', () => {
     let dimension = new Dimension()
-    dimension.LibraryId = 'TestLibraryId'
+    dimension.libraryId = 'TestLibraryId'
     let json = JSON.stringify({ qLibraryId: 'TestLibraryId' })
     let result = JSON.stringify(dimension.generate())
     expect(result).to.equal(json)
@@ -39,7 +39,7 @@ describe('Dimension', () => {
 
   it('should generate qDef', () => {
     let dimension = new Dimension()
-    dimension.Def = new DimensionDefinition('Test Dimension')
+    dimension.def = new DimensionDefinition('Test Dimension')
     let json = JSON.stringify({ qDef: { qFieldDefs: ['Test Dimension'] } })
     let result = JSON.stringify(dimension.generate())
     expect(result).to.equal(json)
@@ -47,7 +47,7 @@ describe('Dimension', () => {
 
   it('should generate qNullSuppression', () => {
     let dimension = new Dimension()
-    dimension.NullSuppression = false
+    dimension.nullSuppression = false
     let json = JSON.stringify({ qNullSuppression: false })
     let result = JSON.stringify(dimension.generate())
     expect(result).to.equal(json)
@@ -55,8 +55,8 @@ describe('Dimension', () => {
 
   it('should generate qOtherTotalSpec', () => {
     let dimension = new Dimension()
-    dimension.OtherTotalSpec = new OtherTotalSpec()
-    dimension.OtherTotalSpec.OtherMode = OtherModeEnum.OTHER_OFF
+    dimension.otherTotalSpec = new OtherTotalSpec()
+    dimension.otherTotalSpec.otherMode = OtherModeEnum.OTHER_OFF
     let json = JSON.stringify({
       qOtherTotalSpec: { qOtherMode: 'OTHER_OFF' }
     })
@@ -66,7 +66,7 @@ describe('Dimension', () => {
 
   it('should generate qShowAll', () => {
     let dimension = new Dimension()
-    dimension.ShowAll = false
+    dimension.showAll = false
     let json = JSON.stringify({ qShowAll: false })
     let result = JSON.stringify(dimension.generate())
     expect(result).to.equal(json)
@@ -74,7 +74,7 @@ describe('Dimension', () => {
 
   it('should generate qOtherLabel', () => {
     let dimension = new Dimension()
-    dimension.OtherLabel = 'Test Other Label'
+    dimension.otherLabel = 'Test Other Label'
     let json = JSON.stringify({ qOtherLabel: 'Test Other Label' })
     let result = JSON.stringify(dimension.generate())
     expect(result).to.equal(json)
@@ -82,7 +82,7 @@ describe('Dimension', () => {
 
   it('should generate qTotalLabel', () => {
     let dimension = new Dimension()
-    dimension.OtherLabel = 'Test Total Label'
+    dimension.otherLabel = 'Test Total Label'
     let json = JSON.stringify({ qOtherLabel: 'Test Total Label' })
     let result = JSON.stringify(dimension.generate())
     expect(result).to.equal(json)
@@ -90,7 +90,7 @@ describe('Dimension', () => {
 
   it('should generate qCalcCond', () => {
     let dimension = new Dimension()
-    dimension.CalcCond = new ValueExpression('Test Value')
+    dimension.calcCond = new ValueExpression('Test Value')
     let json = JSON.stringify({ qCalcCond: { qv: 'Test Value' } })
     let result = JSON.stringify(dimension.generate())
     expect(result).to.equal(json)
@@ -98,7 +98,7 @@ describe('Dimension', () => {
 
   it('should generate qAttributeExpression', () => {
     let dimension = new Dimension()
-    dimension.AttributeExpression = new AttributeExpression('Test Expression')
+    dimension.attributeExpression = new AttributeExpression('Test Expression')
     let json = JSON.stringify({
       qAttributeExpression: { qExpression: 'Test Expression' }
     })

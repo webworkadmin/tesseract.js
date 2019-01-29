@@ -17,7 +17,7 @@ describe('AutoSortByStateDefinition', () => {
 
   it('should generate qDisplayNumberOfRows', () => {
     let autoSortByStateDefinition = new AutoSortByStateDefinition()
-    autoSortByStateDefinition.DisplayNumberOfRows = 10
+    autoSortByStateDefinition.displayNumberOfRows = 10
     let json = JSON.stringify({ qDisplayNumberOfRows: 10 })
     let result = JSON.stringify(autoSortByStateDefinition.generate())
     expect(result).to.equal(json)

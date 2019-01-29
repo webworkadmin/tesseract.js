@@ -17,7 +17,7 @@ describe('CalcCond', () => {
 
   it('should generate qMsg', () => {
     let calcCond = new CalcCond()
-    calcCond.Msg = 'message'
+    calcCond.msg = 'message'
     let json = JSON.stringify({ qMsg: 'message' })
     let result = JSON.stringify(calcCond.generate())
     expect(result).to.equal(json)
@@ -25,7 +25,7 @@ describe('CalcCond', () => {
 
   it('should generate qCond', () => {
     let calcCond = new CalcCond()
-    calcCond.Cond = new ValueExpression('value')
+    calcCond.cond = new ValueExpression('value')
     let json = JSON.stringify({ qCond: { qv: 'value'} })
     let result = JSON.stringify(calcCond.generate())
     expect(result).to.equal(json)

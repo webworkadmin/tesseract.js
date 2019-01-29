@@ -24,7 +24,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qOtherMode', () => {
     let other = new OtherTotalSpec()
-    other.OtherMode = OtherModeEnum.OTHER_ABS_ACC_TARGET
+    other.otherMode = OtherModeEnum.OTHER_ABS_ACC_TARGET
     let json = JSON.stringify({ qOtherMode: 'OTHER_ABS_ACC_TARGET' })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)
@@ -32,7 +32,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qOtherCounted', () => {
     let other = new OtherTotalSpec()
-    other.OtherCounted = new ValueExpression('TestOtherCounted')
+    other.otherCounted = new ValueExpression('TestOtherCounted')
     let json = JSON.stringify({ qOtherCounted: { qv: 'TestOtherCounted' } })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)
@@ -40,7 +40,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qOtherLimit', () => {
     let other = new OtherTotalSpec()
-    other.OtherLimit = new ValueExpression('TestOtherLimit')
+    other.otherLimit = new ValueExpression('TestOtherLimit')
     let json = JSON.stringify({ qOtherLimit: { qv: 'TestOtherLimit' } })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)
@@ -48,7 +48,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qOtherLimitMode', () => {
     let other = new OtherTotalSpec()
-    other.OtherLimitMode = OtherLimitModeEnum.OTHER_GE_LIMIT
+    other.otherLimitMode = OtherLimitModeEnum.OTHER_GE_LIMIT
     let json = JSON.stringify({ qOtherLimitMode: 'OTHER_GE_LIMIT' })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)
@@ -56,7 +56,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qSuppressOther', () => {
     let other = new OtherTotalSpec()
-    other.SuppressOther = false
+    other.suppressOther = false
     let json = JSON.stringify({ qSuppressOther: false })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)
@@ -64,7 +64,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qForceBadValueKeeping', () => {
     let other = new OtherTotalSpec()
-    other.ForceBadValueKeeping = false
+    other.forceBadValueKeeping = false
     let json = JSON.stringify({ qForceBadValueKeeping: false })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)
@@ -72,7 +72,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qApplyEvenWhenPossiblyWrongResult', () => {
     let other = new OtherTotalSpec()
-    other.ApplyEvenWhenPossiblyWrongResult = false
+    other.applyEvenWhenPossiblyWrongResult = false
     let json = JSON.stringify({ qApplyEvenWhenPossiblyWrongResult: false })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)
@@ -80,7 +80,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qGlobalOtherGrouping', () => {
     let other = new OtherTotalSpec()
-    other.GlobalOtherGrouping = false
+    other.globalOtherGrouping = false
     let json = JSON.stringify({ qGlobalOtherGrouping: false })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)
@@ -88,7 +88,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qOtherCollapseInnerDimensions', () => {
     let other = new OtherTotalSpec()
-    other.OtherCollapseInnerDimensions = false
+    other.otherCollapseInnerDimensions = false
     let json = JSON.stringify({ qOtherCollapseInnerDimensions: false })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)
@@ -96,7 +96,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qOtherSortMode', () => {
     let other = new OtherTotalSpec()
-    other.OtherSortMode = OtherSortModeEnum.OTHER_SORT_ASCENDING
+    other.otherSortMode = OtherSortModeEnum.OTHER_SORT_ASCENDING
     let json = JSON.stringify({ qOtherSortMode: 'OTHER_SORT_ASCENDING' })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)
@@ -104,7 +104,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qTotalMode', () => {
     let other = new OtherTotalSpec()
-    other.TotalMode = OtherTotalModeEnum.TOTAL_EXPR
+    other.totalMode = OtherTotalModeEnum.TOTAL_EXPR
     let json = JSON.stringify({ qTotalMode: 'TOTAL_EXPR' })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)
@@ -112,7 +112,7 @@ describe('OtherTotalSpec', () => {
 
   it('should generate qReferencedExpression', () => {
     let other = new OtherTotalSpec()
-    other.ReferencedExpression = 'TestExpression'
+    other.referencedExpression = 'TestExpression'
     let json = JSON.stringify({ qReferencedExpression: 'TestExpression' })
     let result = JSON.stringify(other.generate())
     expect(result).to.equal(json)

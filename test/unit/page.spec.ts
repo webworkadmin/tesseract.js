@@ -17,7 +17,7 @@ describe('Page', () => {
 
   it('should generate qLeft', () => {
     let page = new Page()
-    page.Left = 1
+    page.left = 1
     let json = JSON.stringify({ qLeft: 1 })
     let result = JSON.stringify(page.generate())
     expect(result).to.equal(json)
@@ -25,7 +25,7 @@ describe('Page', () => {
 
   it('should generate qTop', () => {
     let page = new Page()
-    page.Top = 1
+    page.top = 1
     let json = JSON.stringify({ qTop: 1 })
     let result = JSON.stringify(page.generate())
     expect(result).to.equal(json)
@@ -33,7 +33,7 @@ describe('Page', () => {
 
   it('should generate qWidth', () => {
     let page = new Page()
-    page.Width = 1
+    page.width = 1
     let json = JSON.stringify({ qWidth: 1 })
     let result = JSON.stringify(page.generate())
     expect(result).to.equal(json)
@@ -41,7 +41,7 @@ describe('Page', () => {
 
   it('should generate qHeight', () => {
     let page = new Page()
-    page.Height = 1
+    page.height = 1
     let json = JSON.stringify({ qHeight: 1 })
     let result = JSON.stringify(page.generate())
     expect(result).to.equal(json)
