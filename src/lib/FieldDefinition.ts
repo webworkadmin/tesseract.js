@@ -1,4 +1,4 @@
-import { Generatable } from "./Generatable";
+import { Generatable } from './Generatable';
 
 export class FieldDefinition extends Generatable {
   definition: String;
