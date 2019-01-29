@@ -25,7 +25,9 @@ jobs:
           command: npm run lint
       - run:
           name: Unit testing
-          command: |
-            npm run test
+          command: npm run test
+      - run:
+          name: Coverage
+          command: npm run coverage
       - store_artifacts:
           path: dist
