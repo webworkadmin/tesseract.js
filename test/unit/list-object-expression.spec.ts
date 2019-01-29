@@ -16,8 +16,7 @@ describe('ListObjectExpression', () => {
   })
 
   it('should generate qExpr', () => {
-    let listObjectExpression = new ListObjectExpression()
-    listObjectExpression.expression = 'expression'
+    let listObjectExpression = new ListObjectExpression('expression')
     let json = JSON.stringify({ qExpr: 'expression' })
     let result = JSON.stringify(listObjectExpression.generate())
     expect(result).to.equal(json)

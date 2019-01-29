@@ -7,6 +7,11 @@ describe('FieldDefinition', () => {
     expect(FieldDefinition).to.be.a('function')
   })
 
+  it('should be empty', () => {
+    let fieldDefinition = new FieldDefinition()
+    expect(fieldDefinition.definition).to.equal(undefined)
+  })
+
   it('should assign Definition with value passed in constructor', () => {
     let fieldDefinition = new FieldDefinition('Test FieldDef')
     expect(fieldDefinition.definition).to.equal('Test FieldDef')

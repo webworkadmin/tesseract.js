@@ -31,12 +31,12 @@ export class ListDefinition extends Generatable {
           ? this.def.fieldDefinitions.length
           : 1;
       const height = Math.floor(10000 / width);
-      generated.qInitialDataFetch = {
+      generated.qInitialDataFetch = [{
         qTop: 0,
         qLeft: 0,
         qWidth: width,
         qHeight: height,
-      };
+      }];
     }
 
     return generated;

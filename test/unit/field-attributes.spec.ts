@@ -57,8 +57,9 @@ describe('FieldAttributes', () => {
 
   it('should generate qThou', () => {
     let fieldAttributes = new FieldAttributes()
+    fieldAttributes.useThousandsSeparator = true
     fieldAttributes.thousandSeparator = ','
-    let json = JSON.stringify({ qThou: ',' })
+    let json = JSON.stringify({ qUseThou: 1, qThou: ',' })
     let result = JSON.stringify(fieldAttributes.generate())
     expect(result).to.equal(json)
   })

@@ -39,21 +39,25 @@ export class HypercubeDefinition extends Generatable {
 
   generate() {
     const generated: any = super.generate();
-    if (this.numberOfLeftDimensions) {
+    if (this.numberOfLeftDimensions != null) {
       generated.qNoOfLeftDims = this.numberOfLeftDimensions;
     }
 
-    if (this.pseudoDimPosition) generated.PseudoDimPos = this.pseudoDimPosition;
+    if (this.pseudoDimPosition != null) {
+      generated.qPseudoDimPos = this.pseudoDimPosition;
+    }
 
     if (generated.qInitialDataFetch == null) {
-      const width = this.dimensions.length + this.measures.length;
+      const width = this.dimensions.length + this.measures.length || 1;
       const height = Math.floor(10000 / width);
-      generated.qInitialDataFetch = {
-        qTop: 0,
-        qLeft: 0,
-        qWidth: width,
-        qHeight: height,
-      };
+      generated.qInitialDataFetch = [
+        {
+          qTop: 0,
+          qLeft: 0,
+          qWidth: width,
+          qHeight: height,
+        },
+      ];
     }
 
     return generated;

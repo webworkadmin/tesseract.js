@@ -5,7 +5,25 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
+    "coverage": "npx nyc npm test",
     "test": "npx ts-mocha -p ./tsconfig.json test/**/*.spec.ts"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "test/**/*",
+      "dist/**/*",
+      "coverage/**/*"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "all": true
   },
   "author": "rjriel",
   "license": "MIT",
@@ -14,6 +32,7 @@
     "@types/mocha": "^2.2.43",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "ts-mocha": "^2.0.0",
     "ts-node": "^3.3.0",
     "tslint": "^5.12.1",
