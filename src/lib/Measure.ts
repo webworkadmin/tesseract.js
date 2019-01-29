@@ -3,20 +3,20 @@ import {
   SortCriteria,
   AttributeExpression,
   ValueExpression,
-  Generatable
-} from './'
+  Generatable,
+} from './';
 
 export class Measure extends Generatable {
-  LibraryId: String
-  Def: MeasureDefinition
-  SortBy: SortCriteria
-  AttributeExpressions: Array<AttributeExpression> = []
-  CalcCond: ValueExpression
+  libraryId: String;
+  def: MeasureDefinition;
+  sortBy: SortCriteria;
+  attributeExpressions: AttributeExpression[] = [];
+  calcCond: ValueExpression;
 
   constructor(definition?: String) {
-    super()
+    super();
     if (definition) {
-      this.Def = new MeasureDefinition(definition)
+      this.def = new MeasureDefinition(definition);
     }
   }
 }

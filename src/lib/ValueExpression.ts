@@ -1,10 +1,11 @@
-import { Generatable } from './'
+import { Generatable } from './';
 
 export class ValueExpression extends Generatable {
-  v: String
+  v: String;
 
   constructor(value: String) {
-    super()
-    this.v = value
+    super();
+    this.v = value;
+    this.pascalExcludes.push('v');
   }
 }

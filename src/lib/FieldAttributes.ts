@@ -1,34 +1,34 @@
-import { FieldTypeEnum, Generatable } from './'
+import { FieldTypeEnum, Generatable } from './';
 
 export class FieldAttributes extends Generatable {
-  Type: FieldTypeEnum
-  NumberDecimals: Number
-  UseThousandsSeparator: Boolean
-  Format: String
-  DecimalSeparator: String
-  ThousandSeparator: String
-  SAFEARRAY: Array<any> = []
+  type: FieldTypeEnum;
+  numberDecimals: Number;
+  useThousandsSeparator: Boolean;
+  format: String;
+  decimalSeparator: String;
+  thousandSeparator: String;
+  SAFEARRAY: any[] = [];
 
   constructor() {
-    super()
+    super();
     this.excludes.push(
-      'NumberDecimals',
-      'UseThousandsSeparator',
-      'Format',
-      'DecimalSeparator',
-      'ThousandSeparator'
-    )
+      'numberDecimals',
+      'useThousandsSeparator',
+      'format',
+      'decimalSeparator',
+      'thousandSeparator',
+    );
   }
 
   generate() {
-    let generated: any = super.generate()
-    generated.qnDec = this.NumberDecimals
-    if (this.UseThousandsSeparator !== undefined) {
-      generated.qUseThou = this.UseThousandsSeparator ? 1 : 0
+    const generated: any = super.generate();
+    generated.qnDec = this.numberDecimals;
+    if (this.useThousandsSeparator !== undefined) {
+      generated.qUseThou = this.useThousandsSeparator ? 1 : 0;
     }
-    generated.qFmt = this.Format
-    generated.qDec = this.DecimalSeparator
-    generated.qThou = this.ThousandSeparator
-    return generated
+    generated.qFmt = this.format;
+    generated.qDec = this.decimalSeparator;
+    generated.qThou = this.thousandSeparator;
+    return generated;
   }
 }

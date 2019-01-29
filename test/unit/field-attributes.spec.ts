@@ -17,7 +17,7 @@ describe('FieldAttributes', () => {
 
   it('should generate qType', () => {
     let fieldAttributes = new FieldAttributes()
-    fieldAttributes.Type = FieldTypeEnum.ASCII
+    fieldAttributes.type = FieldTypeEnum.ASCII
     let json = JSON.stringify({ qType: 'A' })
     let result = JSON.stringify(fieldAttributes.generate())
     expect(result).to.equal(json)
@@ -25,7 +25,7 @@ describe('FieldAttributes', () => {
 
   it('should generate qnDec', () => {
     let fieldAttributes = new FieldAttributes()
-    fieldAttributes.NumberDecimals = 3
+    fieldAttributes.numberDecimals = 3
     let json = JSON.stringify({ qnDec: 3 })
     let result = JSON.stringify(fieldAttributes.generate())
     expect(result).to.equal(json)
@@ -33,7 +33,7 @@ describe('FieldAttributes', () => {
 
   it('should generate qUseThou', () => {
     let fieldAttributes = new FieldAttributes()
-    fieldAttributes.UseThousandsSeparator = false
+    fieldAttributes.useThousandsSeparator = false
     let json = JSON.stringify({ qUseThou: 0 })
     let result = JSON.stringify(fieldAttributes.generate())
     expect(result).to.equal(json)
@@ -41,7 +41,7 @@ describe('FieldAttributes', () => {
 
   it('should generate qFmt', () => {
     let fieldAttributes = new FieldAttributes()
-    fieldAttributes.Format = 'TestFormat'
+    fieldAttributes.format = 'TestFormat'
     let json = JSON.stringify({ qFmt: 'TestFormat' })
     let result = JSON.stringify(fieldAttributes.generate())
     expect(result).to.equal(json)
@@ -49,7 +49,7 @@ describe('FieldAttributes', () => {
 
   it('should generate qDec', () => {
     let fieldAttributes = new FieldAttributes()
-    fieldAttributes.DecimalSeparator = '.'
+    fieldAttributes.decimalSeparator = '.'
     let json = JSON.stringify({ qDec: '.' })
     let result = JSON.stringify(fieldAttributes.generate())
     expect(result).to.equal(json)
@@ -57,7 +57,7 @@ describe('FieldAttributes', () => {
 
   it('should generate qThou', () => {
     let fieldAttributes = new FieldAttributes()
-    fieldAttributes.ThousandSeparator = ','
+    fieldAttributes.thousandSeparator = ','
     let json = JSON.stringify({ qThou: ',' })
     let result = JSON.stringify(fieldAttributes.generate())
     expect(result).to.equal(json)

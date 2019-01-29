@@ -4,20 +4,20 @@ import {
   OtherLimitModeEnum,
   OtherSortModeEnum,
   OtherTotalModeEnum,
-  Generatable
-} from './'
+  Generatable,
+} from './';
 
 export class OtherTotalSpec extends Generatable {
-  OtherMode: OtherModeEnum
-  OtherCounted: ValueExpression
-  OtherLimit: ValueExpression
-  OtherLimitMode: OtherLimitModeEnum
-  SuppressOther: Boolean
-  ForceBadValueKeeping: Boolean
-  ApplyEvenWhenPossiblyWrongResult: Boolean
-  GlobalOtherGrouping: Boolean
-  OtherCollapseInnerDimensions: Boolean
-  OtherSortMode: OtherSortModeEnum
-  TotalMode: OtherTotalModeEnum
-  ReferencedExpression: String
+  otherMode: OtherModeEnum;
+  otherCounted: ValueExpression;
+  otherLimit: ValueExpression;
+  otherLimitMode: OtherLimitModeEnum;
+  suppressOther: Boolean;
+  forceBadValueKeeping: Boolean;
+  applyEvenWhenPossiblyWrongResult: Boolean;
+  globalOtherGrouping: Boolean;
+  otherCollapseInnerDimensions: Boolean;
+  otherSortMode: OtherSortModeEnum;
+  totalMode: OtherTotalModeEnum;
+  referencedExpression: String;
 }

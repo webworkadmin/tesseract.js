@@ -1,13 +1,13 @@
-import { Generatable } from './'
+import { Generatable } from './';
 
 export class AttributeExpression extends Generatable {
-  Expression: String
-  LibraryId: String
+  expression: String;
+  libraryId: String;
 
   constructor(expression?: String) {
-    super()
+    super();
     if (expression) {
-      this.Expression = expression
+      this.expression = expression;
     }
   }
 }

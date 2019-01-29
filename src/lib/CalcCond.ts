@@ -1,10 +1,6 @@
-import {
-    ValueExpression,
-    Generatable
-  } from './'
-  
-  export class CalcCond extends Generatable {
-    Cond: ValueExpression
-    Msg: String
-  }
-  
+import { ValueExpression, Generatable } from './';
+
+export class CalcCond extends Generatable {
+  cond: ValueExpression;
+  msg: String;
+}

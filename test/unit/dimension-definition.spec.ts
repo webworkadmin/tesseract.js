@@ -30,7 +30,7 @@ describe('DimensionDefinition', () => {
 
   it('should generate qGrouping', () => {
     let dimensionDef = new DimensionDefinition()
-    dimensionDef.Grouping = GroupingEnum.NOGROUPING
+    dimensionDef.grouping = GroupingEnum.NOGROUPING
     let json = JSON.stringify({ qGrouping: 'N' })
     let result = JSON.stringify(dimensionDef.generate())
     expect(result).to.equal(json)
@@ -38,7 +38,7 @@ describe('DimensionDefinition', () => {
 
   it('should generate qFieldDefs (no qFieldLabels)', () => {
     let dimensionDef = new DimensionDefinition()
-    dimensionDef.FieldDefinitions.push(
+    dimensionDef.fieldDefinitions.push(
       new FieldDefinition('Test Dimension Def')
     )
     let json = JSON.stringify({ qFieldDefs: ['Test Dimension Def'] })
@@ -48,7 +48,7 @@ describe('DimensionDefinition', () => {
 
   it('should generate qFieldDefs with qFieldLabels', () => {
     let dimensionDef = new DimensionDefinition()
-    dimensionDef.FieldDefinitions.push(
+    dimensionDef.fieldDefinitions.push(
       new FieldDefinition('Test Dimension Def', 'Test Label')
     )
     let json = JSON.stringify({
@@ -62,8 +62,8 @@ describe('DimensionDefinition', () => {
   it('should generate qSortCriteria', () => {
     let dimensionDef = new DimensionDefinition()
     let sortCriteria = new SortCriteria()
-    sortCriteria.SortByNumeric = 0
-    dimensionDef.SortCriterias.push(sortCriteria)
+    sortCriteria.sortByNumeric = 0
+    dimensionDef.sortCriterias.push(sortCriteria)
     let json = JSON.stringify({ qSortCriterias: [{ qSortByNumeric: 0 }] })
     let result = JSON.stringify(dimensionDef.generate())
     expect(result).to.equal(json)
@@ -72,8 +72,8 @@ describe('DimensionDefinition', () => {
   it('should generate qNumberPresentations', () => {
     let dimensionDef = new DimensionDefinition()
     let fieldAttributes = new FieldAttributes()
-    fieldAttributes.Format = 'TestFormat'
-    dimensionDef.NumberPresentations.push(fieldAttributes)
+    fieldAttributes.format = 'TestFormat'
+    dimensionDef.numberPresentations.push(fieldAttributes)
     let json = JSON.stringify({
       qNumberPresentations: [{ qFmt: 'TestFormat' }]
     })
@@ -83,7 +83,7 @@ describe('DimensionDefinition', () => {
 
   it('should generate qReverseSort', () => {
     let dimensionDef = new DimensionDefinition()
-    dimensionDef.ReverseSort = false
+    dimensionDef.reverseSort = false
     let json = JSON.stringify({ qReverseSort: false })
     let result = JSON.stringify(dimensionDef.generate())
     expect(result).to.equal(json)
@@ -91,7 +91,7 @@ describe('DimensionDefinition', () => {
 
   it('should generate qActiveField', () => {
     let dimensionDef = new DimensionDefinition()
-    dimensionDef.ActiveField = 1
+    dimensionDef.activeField = 1
     let json = JSON.stringify({ qActiveField: 1 })
     let result = JSON.stringify(dimensionDef.generate())
     expect(result).to.equal(json)

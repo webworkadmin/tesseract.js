@@ -1,13 +1,13 @@
 export class FieldDefinition {
-  Definition: String
-  Label: String
+  definition: String;
+  label: String;
 
   constructor(definition?: String, label?: String) {
     if (definition) {
-      this.Definition = definition
+      this.definition = definition;
     }
     if (label) {
-      this.Label = label
+      this.label = label;
     }
   }
 }

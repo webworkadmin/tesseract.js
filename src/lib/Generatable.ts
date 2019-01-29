@@ -1,31 +1,33 @@
 export class Generatable {
-  excludes: Array<String> = ['excludes']
+  excludes: String[] = ['excludes','pascalExcludes'];
+  pascalExcludes: String[] = [];
 
   generate(): Object {
-    let generated: any = {}
+    const generated: any = {};
 
     Object.keys(this)
       .filter(key => this.excludes.indexOf(key) < 0)
-      .forEach(key => {
-        let currentValue: any = this[key]
+      .forEach((key) => {
+        const currentValue: any = this[key];
+        const pascalCaseKey = this.pascalExcludes.indexOf(key) < 0 ? key.substr(0,1).toUpperCase() + key.substr(1) : key;
         if (currentValue instanceof Generatable) {
-          generated[`q${key}`] = currentValue.generate()
+          generated[`q${pascalCaseKey}`] = currentValue.generate();
         } else if (currentValue instanceof Array) {
           if (currentValue.length > 0) {
-            generated[`q${key}`] = []
-            currentValue.forEach(obj => {
+            generated[`q${pascalCaseKey}`] = [];
+            currentValue.forEach((obj) => {
               if (obj instanceof Generatable) {
-                generated[`q${key}`].push(obj.generate())
+                generated[`q${pascalCaseKey}`].push(obj.generate());
               } else {
-                generated[`q${key}`].push(obj)
+                generated[`q${pascalCaseKey}`].push(obj);
               }
-            })
+            });
           }
         } else {
-          generated[`q${key}`] = currentValue
+          generated[`q${pascalCaseKey}`] = currentValue;
         }
-      })
+      });
 
-    return generated
+    return generated;
   }
 }

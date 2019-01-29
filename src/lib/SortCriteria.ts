@@ -1,11 +1,11 @@
-import { ValueExpression, Generatable } from './'
+import { ValueExpression, Generatable } from './';
 
 export class SortCriteria extends Generatable {
-  SortByState: Number
-  SortByFrequency: Number
-  SortByNumeric: Number
-  SortByAscii: Number
-  SortByLoadOrder: Number
-  SortByExpression: Number
-  Expression: ValueExpression
+  sortByState: Number;
+  sortByFrequency: Number;
+  sortByNumeric: Number;
+  sortByAscii: Number;
+  sortByLoadOrder: Number;
+  sortByExpression: Number;
+  expression: ValueExpression;
 }

@@ -3,39 +3,42 @@ import {
   ListObjectExpression,
   FrequencyModeEnum,
   Page,
-  Generatable
-} from "./"
+  Generatable,
+} from './';
 
-import { DimensionDefinition } from "./DimensionDefinition"
+import { DimensionDefinition } from './DimensionDefinition';
 
 export class ListDefinition extends Generatable {
-  StateName: String
-  LibraryId: String
-  Def: DimensionDefinition
-  AutoSortByState: AutoSortByStateDefinition
-  FrequencyMode: FrequencyModeEnum
-  ShowAlternatives: Boolean
-  InitialDataFetch: Array<Page>
-  Expressions: ListObjectExpression
+  stateName: String;
+  libraryId: String;
+  def: DimensionDefinition;
+  autoSortByState: AutoSortByStateDefinition;
+  frequencyMode: FrequencyModeEnum;
+  showAlternatives: Boolean;
+  initialDataFetch: Page[] = [];
+  expressions: ListObjectExpression;
 
   constructor() {
-    super()
+    super();
   }
 
   generate() {
-    let generated: any = super.generate()
+    const generated: any = super.generate();
 
     if (generated.qInitialDataFetch == null) {
-      let width = this.Def && this.Def.FieldDefinitions ? this.Def.FieldDefinitions.length : 1
-      let height = Math.floor(10000 / width)
+      const width =
+        this.def && this.def.fieldDefinitions
+          ? this.def.fieldDefinitions.length
+          : 1;
+      const height = Math.floor(10000 / width);
       generated.qInitialDataFetch = {
         qTop: 0,
         qLeft: 0,
         qWidth: width,
-        qHeight: height
-      }
+        qHeight: height,
+      };
     }
 
-    return generated
+    return generated;
   }
 }

@@ -3,38 +3,38 @@ import {
   FieldDefinition,
   SortCriteria,
   FieldAttributes,
-  Generatable
-} from './'
+  Generatable,
+} from './';
 
 export class DimensionDefinition extends Generatable {
-  Grouping: GroupingEnum
-  FieldDefinitions: Array<FieldDefinition> = []
-  SortCriterias: Array<SortCriteria> = []
-  NumberPresentations: Array<FieldAttributes> = []
-  ReverseSort: Boolean
-  ActiveField: Number
+  grouping: GroupingEnum;
+  fieldDefinitions: FieldDefinition[] = [];
+  sortCriterias: SortCriteria[] = [];
+  numberPresentations: FieldAttributes[] = [];
+  reverseSort: Boolean;
+  activeField: Number;
 
   constructor(definition?: String) {
-    super()
-    this.excludes.push('FieldDefinitions')
+    super();
+    this.excludes.push('fieldDefinitions');
     if (definition) {
-      this.FieldDefinitions.push(new FieldDefinition(definition))
+      this.fieldDefinitions.push(new FieldDefinition(definition));
     }
   }
 
   generate() {
-    let generated: any = super.generate()
-    if (this.FieldDefinitions.length > 0) {
-      generated.qFieldDefs = []
-      generated.qFieldLabels = []
-      this.FieldDefinitions.forEach(definition => {
-        generated.qFieldDefs.push(definition.Definition)
-        if (definition.Label) {
-          generated.qFieldLabels.push(definition.Label)
+    const generated: any = super.generate();
+    if (this.fieldDefinitions.length > 0) {
+      generated.qFieldDefs = [];
+      generated.qFieldLabels = [];
+      this.fieldDefinitions.forEach((definition) => {
+        generated.qFieldDefs.push(definition.definition);
+        if (definition.label) {
+          generated.qFieldLabels.push(definition.label);
         }
-      })
-      if (generated.qFieldLabels.length === 0) delete generated.qFieldLabels
+      });
+      if (generated.qFieldLabels.length === 0) delete generated.qFieldLabels;
     }
-    return generated
+    return generated;
   }
 }

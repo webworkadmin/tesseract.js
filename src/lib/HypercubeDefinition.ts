@@ -6,55 +6,56 @@ import {
   HypercubeModeEnum,
   ReductionModeEnum,
   ValueExpression,
-  Generatable
-} from "./"
+  Generatable,
+} from './';
 
 export class HypercubeDefinition extends Generatable {
-  StateName: String
-  Dimensions: Array<Dimension> = []
-  Measures: Array<Measure> = []
-  InterColumnSortOrder: Array<Number>
-  SuppressZero: Boolean
-  SuppressMissing: Boolean
-  InitialDataFetch: Array<Page>
-  ReductionMode: ReductionModeEnum
-  Mode: HypercubeModeEnum
-  PseudoDimPosition: Number
-  NumberOfLeftDimensions: Number
-  AlwaysFullyExpanded: Boolean
-  MaxStackedCells: Number
-  PopulateMissing: Boolean
-  ShowTotalsAbove: Boolean
-  IndentMode: Boolean
-  CalcCond: ValueExpression
-  SortbyYValue: Number
-  CalcCondition: CalcCond
-  ColumnOrder: Array<Number>
+  stateName: String;
+  dimensions: Dimension[] = [];
+  measures: Measure[] = [];
+  interColumnSortOrder: Number[] = [];
+  suppressZero: Boolean;
+  suppressMissing: Boolean;
+  initialDataFetch: Page[] = [];
+  reductionMode: ReductionModeEnum;
+  mode: HypercubeModeEnum;
+  pseudoDimPosition: Number;
+  numberOfLeftDimensions: Number;
+  alwaysFullyExpanded: Boolean;
+  maxStackedCells: Number;
+  populateMissing: Boolean;
+  showTotalsAbove: Boolean;
+  indentMode: Boolean;
+  calcCond: ValueExpression;
+  sortbyYValue: Number;
+  calcCondition: CalcCond;
+  columnOrder: Number[] = [];
 
   constructor() {
-    super()
-    this.excludes.push("NumberOfLeftDimensions")
-    this.excludes.push("PseudoDimPosition")
+    super();
+    this.excludes.push('numberOfLeftDimensions');
+    this.excludes.push('pseudoDimPosition');
   }
 
   generate() {
-    let generated: any = super.generate()
-    if (this.NumberOfLeftDimensions)
-      generated.qNoOfLeftDims = this.NumberOfLeftDimensions
+    const generated: any = super.generate();
+    if (this.numberOfLeftDimensions) {
+      generated.qNoOfLeftDims = this.numberOfLeftDimensions;
+    }
 
-    if (this.PseudoDimPosition) generated.PseudoDimPos = this.PseudoDimPosition
+    if (this.pseudoDimPosition) generated.PseudoDimPos = this.pseudoDimPosition;
 
     if (generated.qInitialDataFetch == null) {
-      let width = this.Dimensions.length + this.Measures.length
-      let height = Math.floor(10000 / width)
+      const width = this.dimensions.length + this.measures.length;
+      const height = Math.floor(10000 / width);
       generated.qInitialDataFetch = {
         qTop: 0,
         qLeft: 0,
         qWidth: width,
-        qHeight: height
-      }
+        qHeight: height,
+      };
     }
 
-    return generated
+    return generated;
   }
 }

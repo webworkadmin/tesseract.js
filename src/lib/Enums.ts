@@ -4,25 +4,25 @@ export enum OtherModeEnum {
   OTHER_ABS_LIMITED = 'OTHER_ABS_LIMITED',
   OTHER_ABS_ACC_TARGET = 'OTHER_ABS_ACC_TARGET',
   OTHER_REL_LIMITED = 'OTHER_REL_LIMITED',
-  OTHER_REL_ACC_TARGET = 'OTHER_REL_ACC_TARGET'
+  OTHER_REL_ACC_TARGET = 'OTHER_REL_ACC_TARGET',
 }
 
 export enum OtherLimitModeEnum {
   OTHER_GE_LIMIT = 'OTHER_GE_LIMIT',
   OTHER_LE_LIMIT = 'OTHER_LE_LIMIT',
   OTHER_GT_LIMIT = 'OTHER_GT_LIMIT',
-  OTHER_LT_LIMIT = 'OTHER_LT_LIMIT'
+  OTHER_LT_LIMIT = 'OTHER_LT_LIMIT',
 }
 
 export enum OtherTotalModeEnum {
   TOTAL_OFF = 'TOTAL_OFF',
-  TOTAL_EXPR = 'TOTAL_EXPR'
+  TOTAL_EXPR = 'TOTAL_EXPR',
 }
 
 export enum GroupingEnum {
   NOGROUPING = 'N',
   DRILLDOWN = 'H',
-  CYCLIC = 'C'
+  CYCLIC = 'C',
 }
 
 export enum FieldTypeEnum {
@@ -35,19 +35,19 @@ export enum FieldTypeEnum {
   DATE = 'D',
   TIME = 'T',
   TIMESTAMP = 'TS',
-  INTERVAL = 'IV'
+  INTERVAL = 'IV',
 }
 
 export enum OtherSortModeEnum {
   OTHER_SORT_DEFAULT = 'OTHER_SORT_DEFAULT',
   OTHER_SORT_DESCENDING = 'OTHER_SORT_DESCENDING',
-  OTHER_SORT_ASCENDING = 'OTHER_SORT_ASCENDING'
+  OTHER_SORT_ASCENDING = 'OTHER_SORT_ASCENDING',
 }
 
 export enum HypercubeModeEnum {
   DATA_MODE_STRAIGHT = 'S',
   DATA_MODE_PIVOT = 'P',
-  DATA_MODE_PIVOT_STACK = 'K'
+  DATA_MODE_PIVOT_STACK = 'K',
 }
 
 export enum ReductionModeEnum {
@@ -62,5 +62,5 @@ export enum FrequencyModeEnum {
   NX_FREQUENCY_NONE = 'N',
   NX_FREQUENCY_VALUE = 'V',
   NX_FREQUENCY_PERCENT = 'P',
-  NX_FREQUENCY_RELATIVE = 'R'
+  NX_FREQUENCY_RELATIVE = 'R',
 }

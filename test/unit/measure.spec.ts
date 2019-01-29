@@ -31,7 +31,7 @@ describe('Measure', () => {
 
   it('should generate qLibraryId', () => {
     let measure = new Measure()
-    measure.LibraryId = 'TestLibraryId'
+    measure.libraryId = 'TestLibraryId'
     let json = JSON.stringify({ qLibraryId: 'TestLibraryId' })
     let result = JSON.stringify(measure.generate())
     expect(result).to.equal(json)
@@ -39,7 +39,7 @@ describe('Measure', () => {
 
   it('should generate qDef', () => {
     let measure = new Measure()
-    measure.Def = new MeasureDefinition('Test Measure')
+    measure.def = new MeasureDefinition('Test Measure')
     let json = JSON.stringify({ qDef: { qDef: 'Test Measure' } })
     let result = JSON.stringify(measure.generate())
     expect(result).to.equal(json)
@@ -47,8 +47,8 @@ describe('Measure', () => {
 
   it('should generate SortBy', () => {
     let measure = new Measure()
-    measure.SortBy = new SortCriteria()
-    measure.SortBy.SortByAscii = 0
+    measure.sortBy = new SortCriteria()
+    measure.sortBy.sortByAscii = 0
     let json = JSON.stringify({ qSortBy: { qSortByAscii: 0 } })
     let result = JSON.stringify(measure.generate())
     expect(result).to.equal(json)
@@ -56,7 +56,7 @@ describe('Measure', () => {
 
   it('should generate qCalcCond', () => {
     let measure = new Measure()
-    measure.CalcCond = new ValueExpression('Test Value')
+    measure.calcCond = new ValueExpression('Test Value')
     let json = JSON.stringify({ qCalcCond: { qv: 'Test Value' } })
     let result = JSON.stringify(measure.generate())
     expect(result).to.equal(json)
@@ -64,7 +64,7 @@ describe('Measure', () => {
 
   it('should generate qAttributeExpressions', () => {
     let measure = new Measure()
-    measure.AttributeExpressions.push(
+    measure.attributeExpressions.push(
       new AttributeExpression('Test Expression')
     )
     let json = JSON.stringify({

@@ -29,7 +29,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qLabel', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.Label = 'Test Label'
+    measureDef.label = 'Test Label'
     let json = JSON.stringify({ qLabel: 'Test Label' })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -37,7 +37,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qDescription', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.Description = 'Test Description'
+    measureDef.description = 'Test Description'
     let json = JSON.stringify({ qDescription: 'Test Description' })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -45,7 +45,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qTags', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.Tags.push('Test Tag')
+    measureDef.tags.push('Test Tag')
     let json = JSON.stringify({ qTags: ['Test Tag'] })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -53,7 +53,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qGrouping', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.Grouping = GroupingEnum.NOGROUPING
+    measureDef.grouping = GroupingEnum.NOGROUPING
     let json = JSON.stringify({ qGrouping: 'N' })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -61,7 +61,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qDef', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.Def = 'Test Measure Def'
+    measureDef.def = 'Test Measure Def'
     let json = JSON.stringify({ qDef: 'Test Measure Def' })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -70,8 +70,8 @@ describe('MeasureDefinition', () => {
   it('should generate qNumFormat', () => {
     let measureDef = new MeasureDefinition()
     let fieldAttributes = new FieldAttributes()
-    fieldAttributes.Format = 'TestFormat'
-    measureDef.NumFormat = fieldAttributes
+    fieldAttributes.format = 'TestFormat'
+    measureDef.numFormat = fieldAttributes
     let json = JSON.stringify({ qNumFormat: { qFmt: 'TestFormat' } })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -79,7 +79,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qRelative', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.Relative = false
+    measureDef.relative = false
     let json = JSON.stringify({ qRelative: false })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -87,7 +87,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qBrutalSum', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.BrutalSum = false
+    measureDef.brutalSum = false
     let json = JSON.stringify({ qBrutalSum: false })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -95,7 +95,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qAggrFunc', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.AggrFunc = 'Test AggrFunc'
+    measureDef.aggrFunc = 'Test AggrFunc'
     let json = JSON.stringify({ qAggrFunc: 'Test AggrFunc' })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -103,7 +103,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qAccumulate', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.Accumulate = 1
+    measureDef.accumulate = 1
     let json = JSON.stringify({ qAccumulate: 1 })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -111,7 +111,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qReverseSort', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.ReverseSort = false
+    measureDef.reverseSort = false
     let json = JSON.stringify({ qReverseSort: false })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -119,7 +119,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qActiveExpression', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.ActiveExpression = 1
+    measureDef.activeExpression = 1
     let json = JSON.stringify({ qActiveExpression: 1 })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)
@@ -127,7 +127,7 @@ describe('MeasureDefinition', () => {
 
   it('should generate qExpressions', () => {
     let measureDef = new MeasureDefinition()
-    measureDef.Expressions.push('Test Expressions')
+    measureDef.expressions.push('Test Expressions')
     let json = JSON.stringify({ qExpressions: ['Test Expressions'] })
     let result = JSON.stringify(measureDef.generate())
     expect(result).to.equal(json)

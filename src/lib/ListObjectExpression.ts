@@ -1,25 +1,25 @@
-import { Generatable } from "./"
+import { Generatable } from './';
 
 export class ListObjectExpression extends Generatable {
-  Expression: String
-  LibraryId: String
+  expression: String;
+  libraryId: String;
 
   constructor(expression?: String) {
-    super()
+    super();
     if (expression) {
-      this.Expression = expression
+      this.expression = expression;
     }
 
-    this.excludes.push("Expression")
+    this.excludes.push('expression');
   }
 
   generate() {
-    let generated: any = super.generate()
+    const generated: any = super.generate();
 
-    if (this.Expression != null) {
-      generated.qExpr = this.Expression
+    if (this.expression != null) {
+      generated.qExpr = this.expression;
     }
 
-    return generated
+    return generated;
   }
 }

@@ -1,24 +1,24 @@
-import { GroupingEnum, FieldAttributes, Generatable } from './'
+import { GroupingEnum, FieldAttributes, Generatable } from './';
 
 export class MeasureDefinition extends Generatable {
-  Label: String
-  Description: String
-  Tags: Array<String> = []
-  Grouping: GroupingEnum
-  Def: String
-  NumFormat: FieldAttributes
-  Relative: Boolean
-  BrutalSum: Boolean
-  AggrFunc: String
-  Accumulate: Number
-  ReverseSort: Boolean
-  ActiveExpression: Number
-  Expressions: Array<String> = []
+  label: String;
+  description: String;
+  tags: String[] = [];
+  grouping: GroupingEnum;
+  def: String;
+  numFormat: FieldAttributes;
+  relative: Boolean;
+  brutalSum: Boolean;
+  aggrFunc: String;
+  accumulate: Number;
+  reverseSort: Boolean;
+  activeExpression: Number;
+  expressions: String[] = [];
 
   constructor(definition?: String) {
-    super()
+    super();
     if (definition) {
-      this.Def = definition
+      this.def = definition;
     }
   }
 }
