@@ -1,11 +1,13 @@
 import {
+  CalcCond,
   Dimension,
   Measure,
   Page,
   HypercubeModeEnum,
+  ReductionModeEnum,
   ValueExpression,
   Generatable
-} from './'
+} from "./"
 
 export class HypercubeDefinition extends Generatable {
   StateName: String
@@ -15,7 +17,9 @@ export class HypercubeDefinition extends Generatable {
   SuppressZero: Boolean
   SuppressMissing: Boolean
   InitialDataFetch: Array<Page>
+  ReductionMode: ReductionModeEnum
   Mode: HypercubeModeEnum
+  PseudoDimPosition: Number
   NumberOfLeftDimensions: Number
   AlwaysFullyExpanded: Boolean
   MaxStackedCells: Number
@@ -24,16 +28,21 @@ export class HypercubeDefinition extends Generatable {
   IndentMode: Boolean
   CalcCond: ValueExpression
   SortbyYValue: Number
+  CalcCondition: CalcCond
+  ColumnOrder: Array<Number>
 
   constructor() {
     super()
-    this.excludes.push('NumberOfLeftDimensions')
+    this.excludes.push("NumberOfLeftDimensions")
+    this.excludes.push("PseudoDimPosition")
   }
 
   generate() {
     let generated: any = super.generate()
     if (this.NumberOfLeftDimensions)
       generated.qNoOfLeftDims = this.NumberOfLeftDimensions
+
+    if (this.PseudoDimPosition) generated.PseudoDimPos = this.PseudoDimPosition
 
     if (generated.qInitialDataFetch == null) {
       let width = this.Dimensions.length + this.Measures.length

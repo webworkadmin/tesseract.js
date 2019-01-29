@@ -49,3 +49,18 @@ export enum HypercubeModeEnum {
   DATA_MODE_PIVOT = 'P',
   DATA_MODE_PIVOT_STACK = 'K'
 }
+
+export enum ReductionModeEnum {
+  DATA_REDUCTION_NONE = 'N',
+  DATA_REDUCTION_ONEDIM = 'D1',
+  DATA_REDUCTION_SCATTERED = 'S',
+  DATA_REDUCTION_CLUSTERED = 'C',
+  DATA_REDUCTION_STACKED = 'ST',
+}
+
+export enum FrequencyModeEnum {
+  NX_FREQUENCY_NONE = 'N',
+  NX_FREQUENCY_VALUE = 'V',
+  NX_FREQUENCY_PERCENT = 'P',
+  NX_FREQUENCY_RELATIVE = 'R'
+}

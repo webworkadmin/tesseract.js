@@ -10,3 +10,4 @@ jsdoc/
 /enigma.min*
 /sense-utilities.*
 dist/
+.DS_Store
