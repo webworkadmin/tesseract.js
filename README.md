@@ -1,3 +1,7 @@
+[![Coverage Status](https://coveralls.io/repos/github/Qlik-Branch/tesseract.js/badge.svg?branch=master)](https://coveralls.io/github/Qlik-Branch/tesseract.js?branch=master)
+
+[![CircleCI](https://circleci.com/gh/Qlik-Branch/tesseract.js.svg?style=svg)](https://circleci.com/gh/Qlik-Branch/tesseract.js)
+
 # Qlik Hypercube Definition Generator
 
 This library is built with the express intent of making a developers life easier by not forcing them to write out all the JSON necessary to get a hypercube definition.
