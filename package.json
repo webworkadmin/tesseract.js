@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npx tsc",
-    "coverage": "npx nyc npm test",
+    "lint": "npx tslint --project .",
+    "coverage": "npx nyc npm test | npx coveralls",
     "test": "npx ts-mocha -p ./tsconfig.json test/**/*.spec.ts"
   },
   "nyc": {
@@ -20,8 +21,7 @@
       "coverage/**/*"
     ],
     "reporter": [
-      "text",
-      "html"
+      "text-lcov"
     ],
     "all": true
   },
@@ -31,6 +31,7 @@
   "devDependencies": {
     "@types/mocha": "^2.2.43",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "ts-mocha": "^2.0.0",

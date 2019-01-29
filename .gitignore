@@ -11,3 +11,4 @@ jsdoc/
 /sense-utilities.*
 dist/
 .DS_Store
+.coveralls.yml
