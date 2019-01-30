@@ -1,33 +1,34 @@
-import { CalcCond, ValueExpression } from '../../src/lib'
-import 'mocha'
-import { expect } from 'chai'
+import { CalcCond } from '../../src/lib/CalcCond';
+import { ValueExpression } from '../../src/lib/ValueExpression';
+import 'mocha';
+import { expect } from 'chai';
 
 describe('CalcCond', () => {
   it('should be a constructor', () => {
-    expect(CalcCond).to.be.a('function')
-    expect(CalcCond).to.throw()
-  })
+    expect(CalcCond).to.be.a('function');
+    expect(CalcCond).to.throw();
+  });
 
   it('should be empty', () => {
-    let calcCond = new CalcCond()
-    let json = JSON.stringify({})
-    let result = JSON.stringify(calcCond.generate())
-    expect(result).to.equal(json)
-  })
+    const calcCond = new CalcCond();
+    const json = JSON.stringify({});
+    const result = JSON.stringify(calcCond.generate());
+    expect(result).to.equal(json);
+  });
 
   it('should generate qMsg', () => {
-    let calcCond = new CalcCond()
-    calcCond.msg = 'message'
-    let json = JSON.stringify({ qMsg: 'message' })
-    let result = JSON.stringify(calcCond.generate())
-    expect(result).to.equal(json)
-  })
+    const calcCond = new CalcCond();
+    calcCond.msg = 'message';
+    const json = JSON.stringify({ qMsg: 'message' });
+    const result = JSON.stringify(calcCond.generate());
+    expect(result).to.equal(json);
+  });
 
   it('should generate qCond', () => {
-    let calcCond = new CalcCond()
-    calcCond.cond = new ValueExpression('value')
-    let json = JSON.stringify({ qCond: { qv: 'value'} })
-    let result = JSON.stringify(calcCond.generate())
-    expect(result).to.equal(json)
-  })
-})
+    const calcCond = new CalcCond();
+    calcCond.cond = new ValueExpression('value');
+    const json = JSON.stringify({ qCond: { qv: 'value' } });
+    const result = JSON.stringify(calcCond.generate());
+    expect(result).to.equal(json);
+  });
+});

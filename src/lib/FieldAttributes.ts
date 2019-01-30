@@ -1,4 +1,5 @@
-import { FieldTypeEnum, Generatable } from './';
+import { FieldTypeEnum } from './Enums';
+import { Generatable } from './Generatable';
 
 export class FieldAttributes extends Generatable {
   type: FieldTypeEnum;

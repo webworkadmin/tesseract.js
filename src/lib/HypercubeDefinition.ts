@@ -1,13 +1,10 @@
-import {
-  CalcCond,
-  Dimension,
-  Measure,
-  Page,
-  HypercubeModeEnum,
-  ReductionModeEnum,
-  ValueExpression,
-  Generatable,
-} from './';
+import { CalcCond } from './CalcCond';
+import { Dimension } from './Dimension';
+import { Measure } from './Measure';
+import { Page } from './Page';
+import { HypercubeModeEnum, ReductionModeEnum } from './Enums';
+import { ValueExpression } from './ValueExpression';
+import { Generatable } from './Generatable';
 
 export class HypercubeDefinition extends Generatable {
   stateName: String;

@@ -1,27 +1,27 @@
-import { FieldDefinition } from '../../src/lib'
-import 'mocha'
-import { expect } from 'chai'
+import { FieldDefinition } from '../../src/lib/FieldDefinition';
+import 'mocha';
+import { expect } from 'chai';
 
 describe('FieldDefinition', () => {
   it('should be a constructor', () => {
-    expect(FieldDefinition).to.be.a('function')
-  })
+    expect(FieldDefinition).to.be.a('function');
+  });
 
   it('should be empty', () => {
-    let fieldDefinition = new FieldDefinition()
-    expect(fieldDefinition.definition).to.equal(undefined)
-  })
+    const fieldDefinition = new FieldDefinition();
+    expect(fieldDefinition.definition).to.equal(undefined);
+  });
 
   it('should assign Definition with value passed in constructor', () => {
-    let fieldDefinition = new FieldDefinition('Test FieldDef')
-    expect(fieldDefinition.definition).to.equal('Test FieldDef')
-  })
+    const fieldDefinition = new FieldDefinition('Test FieldDef');
+    expect(fieldDefinition.definition).to.equal('Test FieldDef');
+  });
 
   it('should assign Label with value passed in constructor', () => {
-    let fieldDefinition = new FieldDefinition(
+    const fieldDefinition = new FieldDefinition(
       'Test FieldDef',
-      'Test FieldLabel'
-    )
-    expect(fieldDefinition.label).to.equal('Test FieldLabel')
-  })
-})
+      'Test FieldLabel',
+    );
+    expect(fieldDefinition.label).to.equal('Test FieldLabel');
+  });
+});

@@ -1,32 +1,32 @@
-import { ListObjectExpression } from '../../src/lib'
-import 'mocha'
-import { expect } from 'chai'
+import { ListObjectExpression } from '../../src/lib/ListObjectExpression';
+import 'mocha';
+import { expect } from 'chai';
 
 describe('ListObjectExpression', () => {
   it('should be a constructor', () => {
-    expect(ListObjectExpression).to.be.a('function')
-    expect(ListObjectExpression).to.throw()
-  })
+    expect(ListObjectExpression).to.be.a('function');
+    expect(ListObjectExpression).to.throw();
+  });
 
   it('should be empty', () => {
-    let listObjectExpression = new ListObjectExpression()
-    let json = JSON.stringify({})
-    let result = JSON.stringify(listObjectExpression.generate())
-    expect(result).to.equal(json)
-  })
+    const listObjectExpression = new ListObjectExpression();
+    const json = JSON.stringify({});
+    const result = JSON.stringify(listObjectExpression.generate());
+    expect(result).to.equal(json);
+  });
 
   it('should generate qExpr', () => {
-    let listObjectExpression = new ListObjectExpression('expression')
-    let json = JSON.stringify({ qExpr: 'expression' })
-    let result = JSON.stringify(listObjectExpression.generate())
-    expect(result).to.equal(json)
-  })
+    const listObjectExpression = new ListObjectExpression('expression');
+    const json = JSON.stringify({ qExpr: 'expression' });
+    const result = JSON.stringify(listObjectExpression.generate());
+    expect(result).to.equal(json);
+  });
 
   it('should generate qLibraryId', () => {
-    let listObjectExpression = new ListObjectExpression()
-    listObjectExpression.libraryId = 'identifier'
-    let json = JSON.stringify({ qLibraryId: 'identifier' })
-    let result = JSON.stringify(listObjectExpression.generate())
-    expect(result).to.equal(json)
-  })
-})
+    const listObjectExpression = new ListObjectExpression();
+    listObjectExpression.libraryId = 'identifier';
+    const json = JSON.stringify({ qLibraryId: 'identifier' });
+    const result = JSON.stringify(listObjectExpression.generate());
+    expect(result).to.equal(json);
+  });
+});

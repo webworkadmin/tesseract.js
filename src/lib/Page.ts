@@ -1,4 +1,4 @@
-import { Generatable } from './';
+import { Generatable } from './Generatable';
 
 export class Page extends Generatable {
   left: Number;

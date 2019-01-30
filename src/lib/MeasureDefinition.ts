@@ -1,4 +1,6 @@
-import { GroupingEnum, FieldAttributes, Generatable } from './';
+import { GroupingEnum } from './Enums';
+import { FieldAttributes } from './FieldAttributes';
+import { Generatable } from './Generatable';
 
 export class MeasureDefinition extends Generatable {
   label: String;

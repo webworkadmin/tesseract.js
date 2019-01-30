@@ -1,4 +1,8 @@
-import { HypercubeDefinition, Dimension, Measure, Page } from '../../src/lib';
+import { HypercubeDefinition } from '../../src/lib/HypercubeDefinition';
+import { Dimension } from '../../src/lib/Dimension';
+import { Measure } from '../../src/lib/Measure';
+import { Page } from '../../src/lib/Page';
+
 import 'mocha';
 import { expect } from 'chai';
 
@@ -63,12 +67,14 @@ describe('HypercubeDefinition', () => {
           },
         },
       ],
-      qInitialDataFetch: [{
-        qTop: 0,
-        qLeft: 0,
-        qWidth: 2,
-        qHeight: 5000,
-      }],
+      qInitialDataFetch: [
+        {
+          qTop: 0,
+          qLeft: 0,
+          qWidth: 2,
+          qHeight: 5000,
+        },
+      ],
     });
     const result = JSON.stringify(hypercubeDefinition.generate());
     expect(result).to.equal(json);
