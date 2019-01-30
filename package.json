@@ -4,10 +4,10 @@
   "description": "A library to quickly generate a JSON hypercube definition",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
-    "lint": "npx tslint --project .",
-    "coverage": "npx nyc npm test | npx coveralls",
-    "test": "npx ts-mocha -p ./tsconfig.json test/**/*.spec.ts"
+    "build": "tsc",
+    "lint": "tslint --project .",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls -v",
+    "test": "nyc ts-mocha -p ./tsconfig.json test/**/*.spec.ts"
   },
   "nyc": {
     "extension": [
@@ -21,7 +21,7 @@
       "coverage/**/*"
     ],
     "reporter": [
-      "text-lcov"
+      "text"
     ],
     "all": true
   },
