@@ -1,4 +1,5 @@
-import { ValueExpression, Generatable } from './';
+import { ValueExpression } from './ValueExpression';
+import { Generatable } from './Generatable';
 
 export class SortCriteria extends Generatable {
   sortByState: Number;

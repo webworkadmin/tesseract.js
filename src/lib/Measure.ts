@@ -1,10 +1,8 @@
-import {
-  MeasureDefinition,
-  SortCriteria,
-  AttributeExpression,
-  ValueExpression,
-  Generatable,
-} from './';
+import { MeasureDefinition } from './MeasureDefinition';
+import { SortCriteria } from './SortCriteria';
+import { AttributeExpression } from './AttributeExpression';
+import { ValueExpression } from './ValueExpression';
+import { Generatable } from './Generatable';
 
 export class Measure extends Generatable {
   libraryId: String;

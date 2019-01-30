@@ -1,10 +1,8 @@
-import {
-  DimensionDefinition,
-  OtherTotalSpec,
-  ValueExpression,
-  AttributeExpression,
-  Generatable,
-} from './';
+import {  DimensionDefinition } from './DimensionDefinition';
+import {  OtherTotalSpec } from './OtherTotalSpec';
+import {  ValueExpression } from './ValueExpression';
+import {  AttributeExpression } from './AttributeExpression';
+import {  Generatable } from './Generatable';
 
 export class Dimension extends Generatable {
   libraryId: String;

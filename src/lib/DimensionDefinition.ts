@@ -1,10 +1,8 @@
-import {
-  GroupingEnum,
-  FieldDefinition,
-  SortCriteria,
-  FieldAttributes,
-  Generatable,
-} from './';
+import { GroupingEnum } from './Enums';
+import { FieldDefinition } from './FieldDefinition';
+import { SortCriteria } from './SortCriteria';
+import { FieldAttributes } from './FieldAttributes';
+import { Generatable } from './Generatable';
 
 export class DimensionDefinition extends Generatable {
   grouping: GroupingEnum;

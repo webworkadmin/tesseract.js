@@ -1,10 +1,8 @@
-import {
-  AutoSortByStateDefinition,
-  ListObjectExpression,
-  FrequencyModeEnum,
-  Page,
-  Generatable,
-} from './';
+import { AutoSortByStateDefinition } from './AutoSortByStateDefinition';
+import { ListObjectExpression } from './ListObjectExpression';
+import { FrequencyModeEnum } from './Enums';
+import { Page } from './Page';
+import { Generatable } from './Generatable';
 
 import { DimensionDefinition } from './DimensionDefinition';
 

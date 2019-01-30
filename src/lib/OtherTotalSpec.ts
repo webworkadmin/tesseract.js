@@ -1,11 +1,11 @@
+import { ValueExpression } from './ValueExpression';
 import {
-  OtherModeEnum,
-  ValueExpression,
   OtherLimitModeEnum,
   OtherSortModeEnum,
   OtherTotalModeEnum,
-  Generatable,
-} from './';
+  OtherModeEnum,
+} from './Enums';
+import { Generatable } from './Generatable';
 
 export class OtherTotalSpec extends Generatable {
   otherMode: OtherModeEnum;

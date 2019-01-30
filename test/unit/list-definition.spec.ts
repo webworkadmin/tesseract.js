@@ -1,4 +1,8 @@
-import { ListDefinition, DimensionDefinition, FieldDefinition, Page } from '../../src/lib';
+import { ListDefinition } from '../../src/lib/ListDefinition';
+import { DimensionDefinition } from '../../src/lib/DimensionDefinition';
+import { FieldDefinition } from '../../src/lib/FieldDefinition';
+import { Page } from '../../src/lib/Page';
+
 import 'mocha';
 import { expect } from 'chai';
 
@@ -19,10 +23,10 @@ describe('ListDefinition', () => {
   it('should contain a field', () => {
     const listDefinition = new ListDefinition();
     listDefinition.def = new DimensionDefinition();
-    listDefinition.def.fieldDefinitions.push(new FieldDefinition('Field 1'))
+    listDefinition.def.fieldDefinitions.push(new FieldDefinition('Field 1'));
     const json = JSON.stringify({
       qDef: { qFieldDefs: ['Field 1'] },
-      qInitialDataFetch: [{ qTop: 0, qLeft: 0, qWidth: 1, qHeight: 10000 }]
+      qInitialDataFetch: [{ qTop: 0, qLeft: 0, qWidth: 1, qHeight: 10000 }],
     });
     const result = JSON.stringify(listDefinition.generate());
     expect(result).to.equal(json);
@@ -37,7 +41,7 @@ describe('ListDefinition', () => {
     listPage.height = 0;
     listDefinition.initialDataFetch.push(listPage);
     const json = JSON.stringify({
-      qInitialDataFetch: [{ qTop: 0, qLeft: 0, qWidth: 0, qHeight: 0 }]
+      qInitialDataFetch: [{ qTop: 0, qLeft: 0, qWidth: 0, qHeight: 0 }],
     });
     const result = JSON.stringify(listDefinition.generate());
     expect(result).to.equal(json);
