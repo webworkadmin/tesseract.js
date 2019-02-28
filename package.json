@@ -7,7 +7,7 @@
     "build": "tsc",
     "lint": "tslint --project .",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls -v",
-    "test": "nyc ts-mocha -p ./tsconfig.json test/**/*.spec.ts"
+    "test": "nyc mocha -p ./tsconfig.json test/**/*.spec.ts"
   },
   "nyc": {
     "extension": [
@@ -30,11 +30,11 @@
   "dependencies": {},
   "devDependencies": {
     "@types/mocha": "5.2.6",
+    "@types/node": "^11.9.5",
     "chai": "4.2.0",
     "coveralls": "3.0.3",
-    "mocha": "5.2.0",
+    "mocha": "6.0.2",
     "nyc": "13.3.0",
-    "ts-mocha": "6.0.0",
     "ts-node": "8.0.2",
     "tslint": "5.13.0",
     "tslint-config-airbnb": "5.11.1",
