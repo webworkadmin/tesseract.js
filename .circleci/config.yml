@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/tesseract.js
     docker:
-      - image: circleci/node:10.15.1
+      - image: circleci/node:10.15.2
     environment:
       - NPM_CONFIG_LOGLEVEL=warn
     steps:
